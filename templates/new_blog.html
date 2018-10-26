@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>What would you like to post?</h1>
+    
+    <form  action = '/new_blog' method='post'>
+    
+        <label for='title'> What do you want to call your post? </label>
+        <input id='title' type = 'text' name='title' value="{{ new_title}}"><br><br><br>
+         
+         <label for='body'>What is your post?:</label><br><br>
+         <textarea rows='5' cols='50' id='body' name='body' >{{ new_body }}</textarea><br>
+       
+        <input id="submit_button" type="submit" value='Add Post' />
+       
+    </form>
+
+  {% endblock %}  

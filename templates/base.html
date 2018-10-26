@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+     <head>
+        <title>{{title}}</title>
+        <style>
+            .error {
+                    color: red;
+            }
+        </style>
+     
+            <title>Blogz</title>
+           <!-- <link rel="stylesheet" href="/css/normalize.css">
+            <link rel="stylesheet" href="/css/styles.css">-->
+       </head>
+        <body>
+        <div>
+           <nav> 
+           <ul>
+              <li> <a href= '/all_blogs'> All Blogs</a> </li>  
+              <li> <a href= '/new_blog'> Add a Blog entry</a> </li>      
+              <li> <a href= '/login'> Login</a>  </li>   
+              <li> <a href= '/all_users'> List of Bloggers</a> </li>   
+           </nav>  
+        </div>
+        
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+              {% for category, message in messages %}
+
+                 <li class='{{category}}'> {{message}} </li>
+
+              {% endfor%}
+
+        </ul> 
+        {% endwith %}
+        
+    
+           {% block content %}
+           {% endblock %}
+
+            <div>
+        <a href="./logout">log out</a>
+        </div>
+        
+        </body>   
+</html>
